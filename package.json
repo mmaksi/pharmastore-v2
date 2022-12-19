@@ -1,0 +1,29 @@
+{
+  "name": "pharmastore-v2",
+  "version": "2.0.0",
+  "description": "Nextjs app to order pharmaceutical drugs online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmaksi/pharmastore-v2.git"
+  },
+  "keywords": [
+    "pharmastore",
+    "pharmacy",
+    "nextjs",
+    "postgres",
+    "nodejs",
+    "javascript",
+    "material",
+    "UI"
+  ],
+  "author": "Mark Maksi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmaksi/pharmastore-v2/issues"
+  },
+  "homepage": "https://github.com/mmaksi/pharmastore-v2#readme"
+}
