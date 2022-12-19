@@ -1,29 +1,20 @@
 {
-  "name": "pharmastore-v2",
-  "version": "2.0.0",
-  "description": "Nextjs app to order pharmaceutical drugs online",
-  "main": "index.js",
+  "name": "pharmastore",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mmaksi/pharmastore-v2.git"
-  },
-  "keywords": [
-    "pharmastore",
-    "pharmacy",
-    "nextjs",
-    "postgres",
-    "nodejs",
-    "javascript",
-    "material",
-    "UI"
-  ],
-  "author": "Mark Maksi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mmaksi/pharmastore-v2/issues"
-  },
-  "homepage": "https://github.com/mmaksi/pharmastore-v2#readme"
+  "dependencies": {
+    "@next/font": "13.0.7",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.0.7",
+    "next": "13.0.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }
+
