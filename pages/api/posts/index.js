@@ -1,17 +1,22 @@
 import client from "../../../lib/db";
 
-client.connect();
-
 export default async function handler(req, res) {
-  await client.query("SELECT * from titles", (err, resp) => {
+  // Tries to connect to elephantSQL database
+  client.connect(function (err) {
     if (err) {
-      console.log(err);
-      return res.status(200).json({ name: "error" });
+      return console.error("could not connect to postgres", err);
     }
-    console.log(resp);
-    return res.status(200).json({ name: resp });
-    client.end();
+    // If there was no error perform the query
+    // Fetch all products from a specific categories
+    client.query("SELECT * from product", (err, resp) => {
+      if (err) {
+        console.log(err);
+        return res.status(200).json({ name: "error" });
+      }
+      console.log(resp);
+      return res.status(200).json({ name: resp });
+      client.end();
+    });
+    //   return res.status(200).json({ name: "res" });
   });
-
-  //   return res.status(200).json({ name: "res" });
 }
