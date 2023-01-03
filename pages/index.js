@@ -1,29 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-
-import { useEffect } from "react";
-import axios from "axios";
-import colors from "colors/safe";
+require("colors");
 
 export default function Home() {
-  // Hooks
-  useEffect(() => {
-    async function getPostsOnLoad(params) {
-      try {
-        const response = await axios.get("/api/posts");
-        console.log(colors.green(response));
-      } catch (error) {
-        console.error(
-          colors.red("Error fetching data from pharmastore"),
-          colors.red(error)
-        );
-      }
-    }
-    getPostsOnLoad();
-  });
-
   return (
     <>
       <Head>
