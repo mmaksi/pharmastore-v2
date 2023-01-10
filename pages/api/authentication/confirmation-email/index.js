@@ -2,12 +2,14 @@ import { client } from "../../../../lib/db";
 
 export default async function handler(req, res) {
   const confirmationToken = req.query.token;
+  console.log(confirmationToken);
 
   try {
     const foundUser = await client.query(
       `SELECT * from "user" WHERE "emailToken" = '${confirmationToken}'`
     );
     const savedToken = foundUser.rows[0].emailToken;
+    const userId = foundUser.rows[0].userId;
     // Check if confirmation token matches the token in the database
     if (savedToken === confirmationToken) {
       // Set isConfirmed to true
@@ -19,7 +21,7 @@ export default async function handler(req, res) {
         `UPDATE "user" SET "emailToken" = '' WHERE "emailToken" = '${savedToken}'`
       );
       // Redirect the user to the homepage
-      return res.redirect(307, "/");
+      return res.redirect(307, "/?userId");
     } else {
       return res
         .status(400)

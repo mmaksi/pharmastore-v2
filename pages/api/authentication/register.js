@@ -27,12 +27,10 @@ export default async function handler(req, res) {
             .status(200)
             .json({ success: true, message: "Token added successfully" });
         } catch (error) {
-          res
-            .status(500)
-            .json({
-              success: false,
-              message: "Something went wrong in our servers",
-            });
+          res.status(500).json({
+            success: false,
+            message: "Something went wrong in our servers",
+          });
           throw new Error(error.stack.red);
         }
       }
